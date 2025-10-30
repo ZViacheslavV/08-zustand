@@ -19,6 +19,19 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'NoteHub',
   description: 'Create you next note',
+  openGraph: {
+    title: 'Notes collection',
+    description: 'Create collection of your personal notes',
+    url: 'https://08-zustand-tan-seven.vercel.app/',
+    images: [
+      {
+        url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Notebook image',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
