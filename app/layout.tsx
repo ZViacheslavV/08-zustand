@@ -5,7 +5,7 @@ import './globals.css';
 import Header from '@/components/Header/Header';
 import Footer from '@/components/Footer/Footer';
 import TanStackProvider from '@/components/TanStackProvider/TanStackProvider';
-import { GRAPH_IMAGE_URL, SITE_URL } from '@/lib/constants';
+// import { GRAPH_IMAGE_URL, SITE_URL } from '@/lib/constants';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -24,17 +24,20 @@ const roboto = Roboto({
   display: 'swap',
 });
 
+/* const SITE_URL = 'https://08-zustand-tan-seven.vercel.app/';
+const GRAPH_IMAGE_URL = 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg'; */
+
 export const metadata: Metadata = {
   title: 'NoteHub',
   description: 'Create you next note',
   openGraph: {
     title: 'Notes collection',
     description: 'Create collection of your personal notes',
-    url: SITE_URL,
+    url: 'https://08-zustand-tan-seven.vercel.app/',
     siteName: 'NoteHub',
     images: [
       {
-        url: GRAPH_IMAGE_URL,
+        url: 'https://ac.goit.global/fullstack/react/notehub-og-meta.jpg',
         width: 1200,
         height: 630,
         alt: 'Notebook image',
