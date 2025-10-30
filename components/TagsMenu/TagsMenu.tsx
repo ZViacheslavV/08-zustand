@@ -39,7 +39,7 @@ const TagsMenu = () => {
     closeMenu();
   };
 
-  const buttonText = selectedTag ? `Notes: ${selectedTag}` : 'Notes ▾';
+  const buttonText = selectedTag ? `Filter: ${selectedTag}` : 'Filter ▾';
 
   return (
     <div className={css.menuContainer} ref={menuRef}>
