@@ -7,7 +7,7 @@ import { createNote } from '@/lib/api';
 import { Note } from '@/types/note';
 import { NOTES_FILTER_CATEGORIES } from '@/lib/constants';
 import { useRouter } from 'next/navigation';
-import { useNoteDraftStore } from '@/lib/store/nodeStore';
+import { useNoteDraftStore } from '@/lib/store/noteStore';
 
 const NoteForm = () => {
   const fieldId = useId();
