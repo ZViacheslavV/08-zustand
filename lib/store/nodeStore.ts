@@ -2,13 +2,15 @@ import { Note } from '@/types/note';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
+type draftNote = Pick<Note, 'title' | 'content' | 'tag'>;
+
 interface NoteDraftStore {
-  draft: Pick<Note, 'title' | 'content' | 'tag'>;
-  setDraft: (note: Pick<Note, 'title' | 'content' | 'tag'>) => void;
+  draft: draftNote;
+  setDraft: (note: draftNote) => void;
   clearDraft: () => void;
 }
 
-const initialDraft: Pick<Note, 'title' | 'content' | 'tag'> = {
+const initialDraft: draftNote = {
   title: '',
   content: '',
   tag: 'Todo',

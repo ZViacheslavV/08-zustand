@@ -7,8 +7,6 @@ import NoteList from '@/components/NoteList/NoteList';
 import EmptyListMessage from '@/components/EmptyListMessage/EmptyListMessage';
 import Pagination from '@/components/Pagination/Pagination';
 import SearchBox from '@/components/SearchBox/SearchBox';
-// import Modal from '@/components/Modal/Modal';
-// import NoteForm from '@/components/NoteForm/NoteForm';
 import { useDebouncedCallback } from 'use-debounce';
 import css from './NotesPage.module.css';
 import Link from 'next/link';
@@ -20,7 +18,6 @@ interface NotesClientProps {
 const NotesClient = ({ category }: NotesClientProps) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  // const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = useDebouncedCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value.trim());
@@ -38,9 +35,6 @@ const NotesClient = ({ category }: NotesClientProps) => {
     placeholderData: keepPreviousData,
     refetchOnMount: false, //true - variant for new notes refetch?
   });
-
-  // const openModal = () => setIsModalOpen(true);
-  // const closeModal = () => setIsModalOpen(false);
 
   return (
     <div className={css.app}>
