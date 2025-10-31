@@ -92,7 +92,7 @@ const NoteForm = () => {
           defaultValue={draft?.content}
           onChange={handleChange}
         />
-        {errors.title && <p className={css.error}>{errors.content}</p>}
+        {errors.content && <p className={css.error}>{errors.content}</p>}
       </div>
 
       <div className={css.formGroup}>
@@ -110,7 +110,7 @@ const NoteForm = () => {
             </option>
           ))}
         </select>
-        {errors.title && <p className={css.error}>{errors.tag}</p>}
+        {errors.tag && <p className={css.error}>{errors.tag}</p>}
       </div>
 
       <div className={css.actions}>
