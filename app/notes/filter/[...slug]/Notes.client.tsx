@@ -7,10 +7,11 @@ import NoteList from '@/components/NoteList/NoteList';
 import EmptyListMessage from '@/components/EmptyListMessage/EmptyListMessage';
 import Pagination from '@/components/Pagination/Pagination';
 import SearchBox from '@/components/SearchBox/SearchBox';
-import Modal from '@/components/Modal/Modal';
-import NoteForm from '@/components/NoteForm/NoteForm';
+// import Modal from '@/components/Modal/Modal';
+// import NoteForm from '@/components/NoteForm/NoteForm';
 import { useDebouncedCallback } from 'use-debounce';
 import css from './NotesPage.module.css';
+import Link from 'next/link';
 
 interface NotesClientProps {
   category: string | /* null */ undefined;
@@ -19,7 +20,7 @@ interface NotesClientProps {
 const NotesClient = ({ category }: NotesClientProps) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = useDebouncedCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value.trim());
@@ -38,8 +39,8 @@ const NotesClient = ({ category }: NotesClientProps) => {
     refetchOnMount: false, //true - variant for new notes refetch?
   });
 
-  const openModal = () => setIsModalOpen(true);
-  const closeModal = () => setIsModalOpen(false);
+  // const openModal = () => setIsModalOpen(true);
+  // const closeModal = () => setIsModalOpen(false);
 
   return (
     <div className={css.app}>
@@ -52,19 +53,22 @@ const NotesClient = ({ category }: NotesClientProps) => {
             onPageChange={setCurrentPage}
           />
         )}
-        <button className={css.button} onClick={openModal}>
+        {/* <button className={css.button} onClick={openModal}>
           Create note +
-        </button>
+        </button> */}
+        <Link className={css.button} href="/notes/action/create">
+          Create note +
+        </Link>
       </header>
 
       {notes.length > 0 && <NoteList notes={notes} />}
       {!notes.length && !isFetching && !isError && <EmptyListMessage />}
 
-      {isModalOpen && (
-        <Modal onClose={closeModal} /* showCloseButton={false} */>
+      {/* {isModalOpen && (
+        <Modal onClose={closeModal}>
           <NoteForm onClose={closeModal} />
         </Modal>
-      )}
+      )} */}
     </div>
   );
 };
